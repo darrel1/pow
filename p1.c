@@ -25,9 +25,6 @@ int main()
     DDRC = 0x01; //Makes RC0 output pin for servo motor
     PORTC = 0x00;
 
-    uint8_t Pin_read1;
-    uint8_t Pin_read2;
-
     CLR_BIT(DDRD,PD2); //obstacle interrupt0
     CLR_BIT(PORTD,PD2); //pull down
     CLR_BIT(DDRD,PD3);  //rain interrupt1
@@ -51,6 +48,8 @@ int main()
 
     while(1) //super loop
     {
+          uint8_t Pin_read1;
+          uint8_t Pin_read2;  
           Pin_read1=PIND;
           Pin_read2=PIND;
 
